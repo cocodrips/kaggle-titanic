@@ -22,7 +22,8 @@ test_data = pd.read_csv("data/test.csv")
 _f = 'C(Pclass) + C(Sex) + Age'
 test_data_cf = patsy.dmatrix(_f, data=test_data, return_type='dataframe')
 
-for d in model.fit(test_data_cf):
+res = model.fit(test_data_cf)
+for d in res:
     print (d)
 
 #
